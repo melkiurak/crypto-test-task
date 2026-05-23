@@ -4,21 +4,26 @@ import NotFound from "./pages/NotFound.jsx";
 import { routes } from "./routes.jsx";
 import { ConfigProvider } from "antd";
 import { theme } from "./theme.js";
+import { QueriesObserver, QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
     return (
-        <ConfigProvider theme={theme}>
-            <BrowserRouter>
-                <Routes>
-                    <Route element={<AppLayout />}>
-                        {routes.map((r) => (
-                            <Route key={r.path} path={r.path} element={r.element} />
-                        ))}
-                        <Route path="*" element={<NotFound />} />
-                    </Route>
-                </Routes>
-            </BrowserRouter>
-        </ConfigProvider>
+        <QueryClientProvider client={queryClient}>
+            <ConfigProvider theme={theme}>
+                <BrowserRouter>
+                    <Routes>
+                        <Route element={<AppLayout />}>
+                            {routes.map((r) => (
+                                <Route key={r.path} path={r.path} element={r.element} />
+                            ))}
+                            <Route path="*" element={<NotFound />} />
+                        </Route>
+                    </Routes>
+                </BrowserRouter>
+            </ConfigProvider>
+        </QueryClientProvider>
     );
 }
 
