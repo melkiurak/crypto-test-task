@@ -1,9 +1,9 @@
 import { BarChartOutlined, DollarOutlined, FormOutlined, HomeOutlined } from "@ant-design/icons";
-import Home from "./pages/Home.jsx";
-import { Coins } from "./pages/Coins.jsx";
-import { CoinsPaged } from "./pages/CoinsPaged.jsx";
-import { CoinsChartPage } from "./pages/CoinsChartPage.jsx";
-import { Wizard } from "./pages/Wizard.jsx";
+import Home from "./pages/HomePage.jsx";
+import { Coins } from "./pages/CoinsPage.jsx";
+import { CoinsPaged } from "./pages/CoinsPagedPage.jsx";
+import { CoinsChartPage } from "./pages/CoinsChartPage..jsx";
+import { Wizard } from "./pages/WizardPage.jsx";
 
 export const routes = [
     { path: "/", label: "Home", icon: <HomeOutlined />, element: <Home /> },

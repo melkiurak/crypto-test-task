@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppLayout from "./components/AppLayout.jsx";
-import NotFound from "./pages/NotFound.jsx";
+import NotFound from "./pages/NotFoundPage.jsx";
 import { routes } from "./routes.jsx";
 import { ConfigProvider } from "antd";
 import { theme } from "./theme.js";

@@ -1,6 +1,6 @@
 import { Table } from "antd";
 import { useCoins } from "../hooks/useCoins"
-import { CoinsTable } from "./CoinsTable";
+import { CoinsTable } from "./CoinsTable.page";
 import { Typography } from "antd";
 
 export const  Coins = () => {
