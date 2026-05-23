@@ -7,7 +7,7 @@ import { Typography } from "antd";
 
 const { Title } = Typography;
 
-export const CoinsChartPage = () => {
+export const CoinsChart = () => {
     const [selectedCoin, setSelectedCoin] = useState("bitcoin");
     const [isReady, setIsReady] = useState(false);
     
