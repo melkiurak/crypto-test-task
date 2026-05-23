@@ -4,7 +4,7 @@ export const useCoinsChart = (coinId) => {
     return useQuery({
         queryKey: ["coinChartKey", coinId],
         queryFn: async () => {
-            const response = await fetch(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=7`)
+            const response = await fetch(`/api/coins/${coinId}/market_chart?vs_currency=usd&days=7`)
             if (!response.ok) {
                 throw new Error("Не вдалося завантажити дані графіка");
             }

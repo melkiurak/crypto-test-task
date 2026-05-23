@@ -41,7 +41,7 @@ export const CoinsTable = ({data, loading, pagination, onChange}) => {
         {
             title: "Market Cap",
             dataIndex: "market_cap",
-            key: "maerketCap",
+            key: "marketCap",
             sorter: (a,b) => a.market_cap - b.market_cap,
             render: (valueMarketCap) => valueMarketCap ? `$${valueMarketCap.toLocaleString()}` : "-"
         },

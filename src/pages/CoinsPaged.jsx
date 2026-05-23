@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { useCoins } from "../hooks/useCoins";
 import { CoinsTable } from "./CoinsTable";
-
+import { Typography } from "antd";
 export const CoinsPaged = () => {
     const [page, setPage] = useState(1);
     const perPage = 20;
+    const { Title } = Typography;
     
     const { data, isLoading, error } = useCoins(page, perPage)
     
@@ -16,7 +17,7 @@ export const CoinsPaged = () => {
 
     return (
        <div>
-            <h2>Top coins with pagination</h2>
+            <Title level={4}>Top coins with pagination</Title>
             <CoinsTable 
                 data={data} 
                 loading={isLoading} 

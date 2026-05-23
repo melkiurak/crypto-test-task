@@ -29,12 +29,13 @@ export const useCoins = (page, perPage) => {
     return useQuery({
         queryKey: ["coinsKey", page, perPage],
         queryFn:  async () => {
-            const response =  await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=${perPage}&page=${page}`);
+            const response = await fetch(`/api/coins/markets?vs_currency=usd&per_page=${perPage}&page=${page}`);
             if(!response.ok) {
                 throw new Error("The coins did not download");
             }
             return response.json();
         },
         placeholderData: (keepPreviousData) => keepPreviousData,
+        staleTime: 30000,
     })
 }

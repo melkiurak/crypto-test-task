@@ -2,6 +2,7 @@ export const theme = {
     token: {
         colorPrimary: "#1677ff",
         borderRadius: 32,
+        fontFamily: "'Inter', -apple-system, sans-serif",
     },
     components: {
         Table: {
@@ -12,4 +13,8 @@ export const theme = {
             paddingInline: 12,
         },
     },
+    Typography: {
+            colorText: '#1f1f1f',
+            colorTextHeading: '#000000',
+        },
 };
