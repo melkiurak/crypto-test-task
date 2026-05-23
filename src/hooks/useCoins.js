@@ -25,15 +25,16 @@ const MOCK_COINS = [
     }
 ];
 
-export const useCoins = ({page, perPage}) => {
+export const useCoins = (page, perPage) => {
     return useQuery({
         queryKey: ["coinsKey", page, perPage],
         queryFn:  async () => {
-            //const response =  await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=${perPage}&page=${page}`);
-            //if(!response.ok) {
-            //    throw new Error("The coins did not download");
-            //}
-            return MOCK_COINS;
+            const response =  await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=${perPage}&page=${page}`);
+            if(!response.ok) {
+                throw new Error("The coins did not download");
+            }
+            return response.json();
         },
+        placeholderData: (keepPreviousData) => keepPreviousData,
     })
 }

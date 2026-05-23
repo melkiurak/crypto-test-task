@@ -1,3 +1,5 @@
+import { Table } from "antd";
+
 export const CoinsTable = ({data, loading, pagination, onChange}) => {
     const colums = [
         {
@@ -50,5 +52,8 @@ export const CoinsTable = ({data, loading, pagination, onChange}) => {
             sorter: (a,b) => a.total_volume - b.total_volume,
             render: (valueVolume) => `$${valueVolume.toLocaleString()}`
         }
-    ]
+    ];
+    return (
+        <Table dataSource={data} columns={colums} rowKey="id" scroll={{ y: 500 }} loading={loading} pagination={pagination} onChange={onChange}/>
+    )
 }

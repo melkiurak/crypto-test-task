@@ -6,5 +6,5 @@ import { CoinsPaged } from "./pages/CoinsPaged.jsx";
 export const routes = [
     { path: "/", label: "Home", icon: <HomeOutlined />, element: <Home /> },
     { path: '/coins', label: 'Coins', icon: <DollarOutlined />, element: <Coins/>},
-    { path: '/coins', label: 'Coins', icon: <DollarOutlined />, element: <CoinsPaged/>}
+    { path: '/coins-paged', label: 'Coins Paged', icon: <DollarOutlined />, element: <CoinsPaged/>}
 ];
